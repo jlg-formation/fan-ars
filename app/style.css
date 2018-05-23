@@ -1,0 +1,38 @@
+body, html {
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.site-id {
+    font-style: italic;
+    font-size: 2em;
+}
+
+header {
+    text-align: center;
+    background-color: #eee;
+}
+
+.menu {
+    display: inline-flex;
+    width: 50%;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.menuitem {
+    display: inline;
+    
+}
+
+.menuitem a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 1em;
+}
+
