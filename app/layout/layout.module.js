@@ -1,18 +1,8 @@
-(function() {
-    'use strict';
-
-    var app = angular.module('layout', []);
-
-    app.component('arsHeader', {
+angular.module('layout', [])
+    .component('arsHeader', {
         templateUrl: 'layout/tmpl/ars-header.html',
-    });
-
-    app.component('arsBody', {
+    }).component('arsBody', {
         templateUrl: 'layout/tmpl/ars-body.html',
-    });
-
-    app.component('arsFooter', {
+    }).component('arsFooter', {
         templateUrl: 'layout/tmpl/ars-footer.html',
     });
-
-})();
