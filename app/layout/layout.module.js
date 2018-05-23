@@ -6,3 +6,5 @@ angular.module('layout', [])
     }).component('arsFooter', {
         templateUrl: 'layout/tmpl/ars-footer.html',
     });
+
+console.log('coucou');
