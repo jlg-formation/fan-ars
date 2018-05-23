@@ -7,4 +7,3 @@ angular.module('layout', [])
         templateUrl: 'layout/tmpl/ars-footer.html',
     });
 
-console.log('coucou');
