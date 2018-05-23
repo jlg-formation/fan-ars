@@ -1,22 +1,21 @@
-(function() {
-    'use strict';
+import 'angular';
+import './layout/layout.module';
 
-    var app = angular.module('main', ['layout']);
+const app = angular.module('main', ['layout']);
 
-    app.component('asrHello', {
-        template: 'Hello {{$ctrl.name}} <button ng-click="$ctrl.sayHello()">Click me!</button>',
-        bindings: {
-            name: '@',
-        },
-        controller: function ASRHelloCtrl(helloService) {
-            this.sayHello = helloService.sayHello
-        }
-    });
+app.component('asrHello', {
+    template: 'Hello {{$ctrl.name}} <button ng-click="$ctrl.sayHello()">Click me!</button>',
+    bindings: {
+        name: '@',
+    },
+    controller: function ASRHelloCtrl(helloService) {
+        this.sayHello = helloService.sayHello
+    }
+});
 
-    app.service('helloService', function HelloService($window) {
-        this.sayHello = function() {
-            console.log('Hello hello...');
-            $window.alert('Hello hello...');
-        }
-    });
-})();
+app.service('helloService', function HelloService($window) {
+    this.sayHello = function () {
+        console.log('Hello hello...');
+        $window.alert('Hello hello...');
+    }
+});
