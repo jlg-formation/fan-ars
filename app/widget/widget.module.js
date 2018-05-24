@@ -14,12 +14,19 @@ app.component('arsStar', {
         const whiteStar = 'widget/img/white_star.png';
         this.img = [];
 
-        const note = 3;
-        for (let i = 0; i < note; i++) {
-            this.img[i] = yellowStar;
-        }
-        for (let i = note; i < 5; i++) {
-            this.img[i] = whiteStar;
-        }
-    }
+        this.$onInit = () => {
+
+
+            const note = this.note || 3;
+            for (let i = 0; i < note; i++) {
+                this.img[i] = yellowStar;
+            }
+            for (let i = note; i < 5; i++) {
+                this.img[i] = whiteStar;
+            }
+        };
+    },
+    bindings: {
+        note: '@',
+    },
 });
