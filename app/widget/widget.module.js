@@ -38,7 +38,7 @@ app.component('arsPassword', {
     <i ng-show="$ctrl.state === $ctrl.CLEAR" ng-click="$ctrl.state = $ctrl.HIDDEN" class="fa fa-eye"></i>
     
     `,
-    controller: function ARSPasswordCtrl() {
+    controller: function ARSPasswordCtrl($scope) {
         this.HIDDEN = 0;
         this.CLEAR = 1;
         this.state = this.HIDDEN;
@@ -47,5 +47,11 @@ app.component('arsPassword', {
         this.$onInit = () => {
             console.log('this.ngModelCtrl', this.ngModelCtrl);
         };
+
+        $scope.$watch('$ctrl.password', () => {
+            console.log('password has changed.', this.password);
+            this.ngModelCtrl.$viewValue = this.password;
+            this.ngModelCtrl.$commitViewValue();
+        });
     }
 }); 
