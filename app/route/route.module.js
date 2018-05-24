@@ -1,6 +1,6 @@
 import '@uirouter/angularjs';
 
-import {ProductCtrl} from './ProductCtrl.controller';
+import ProductCtrl from './ProductCtrl.controller';
 
 const app = angular.module('route', ['ui.router']);
 
