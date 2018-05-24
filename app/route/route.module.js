@@ -1,5 +1,7 @@
 import '@uirouter/angularjs';
 
+import {ProductCtrl} from './ProductCtrl.controller';
+
 const app = angular.module('route', ['ui.router']);
 
 app.config(function ($locationProvider, $stateProvider, $urlRouterProvider) {
@@ -14,7 +16,9 @@ app.config(function ($locationProvider, $stateProvider, $urlRouterProvider) {
     const productState = {
         name: 'products',
         url: '/products',
-        templateUrl: 'route/tmpl/products.html'
+        templateUrl: 'route/tmpl/products.html',
+        controller: ProductCtrl,
+        controllerAs: '$ctrl',
     };
 
     const contactState = {
