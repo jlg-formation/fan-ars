@@ -18,6 +18,10 @@ app.use('/app/ws', (req, res, next) => {
 		'/s6': 2,
 	};
 	const time = cfg[req.url];
+	if (time === undefined) {
+		res.status(404).end();
+		return;
+	}
 	setTimeout(() => {
 		res.json({ url: req.url });
 	}, time * 1000);
