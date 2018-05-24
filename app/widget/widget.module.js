@@ -31,10 +31,10 @@ app.component('arsPassword', {
         ngModelCtrl: 'ngModel',
     },
     template: `
-    <input ng-show="$ctrl.state === $ctrl.HIDDEN" type="password">
+    <input ng-model="$ctrl.password" ng-show="$ctrl.state === $ctrl.HIDDEN" type="password">
     <i ng-show="$ctrl.state === $ctrl.HIDDEN" ng-click="$ctrl.state = $ctrl.CLEAR" class="fa fa-eye-slash"></i>
 
-    <input ng-show="$ctrl.state === $ctrl.CLEAR" type="text">
+    <input ng-model="$ctrl.password" ng-show="$ctrl.state === $ctrl.CLEAR" type="text">
     <i ng-show="$ctrl.state === $ctrl.CLEAR" ng-click="$ctrl.state = $ctrl.HIDDEN" class="fa fa-eye"></i>
     
     `,
@@ -42,6 +42,7 @@ app.component('arsPassword', {
         this.HIDDEN = 0;
         this.CLEAR = 1;
         this.state = this.HIDDEN;
+        this.password = '';
 
         this.$onInit = () => {
             console.log('this.ngModelCtrl', this.ngModelCtrl);
