@@ -3,9 +3,7 @@ const app = angular.module('widget', []);
 
 app.component('arsStar', {
     template: `
-
-    <img ng-repeat="i in [0,1,2,3,4]"  ng-src="{{$ctrl.img[i]}}">
-    
+    <img ng-repeat="i in [0,1,2,3,4]" ng-click="$ctrl.update(i+1)" ng-src="{{$ctrl.img[i]}}">
     `,
     controller: function ARSStarCtrl($scope) {
         const yellowStar = 'widget/img/yellow_star.png';
@@ -20,7 +18,8 @@ app.component('arsStar', {
             for (let i = note; i < 5; i++) {
                 this.img[i] = whiteStar;
             }
-		});
+        });
+        this.update = note => this.note = note;
     },
     bindings: {
         note: '<',
