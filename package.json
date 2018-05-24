@@ -14,9 +14,14 @@
     "@uirouter/angularjs": "^1.0.18",
     "angular": "^1.7.0",
     "angular-route": "^1.7.0",
+    "css-loader": "^0.28.11",
     "express": "^4.16.3",
+    "extract-text-webpack-plugin": "^3.0.2",
     "font-awesome": "^4.7.0",
-    "serve-index": "^1.9.1"
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "serve-index": "^1.9.1",
+    "style-loader": "^0.21.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

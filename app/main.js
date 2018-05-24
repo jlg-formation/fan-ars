@@ -1,3 +1,6 @@
+import 'angular/angular-csp.css';
+import './style.scss';
+
 import 'angular';
 import './layout/layout.module';
 import './route/route.module';

@@ -1,3 +1,5 @@
+$hue: 120;
+
 body, html {
     padding: 0;
     margin: 0;
@@ -14,7 +16,7 @@ body, html {
 
 header {
     text-align: center;
-    background-color: #eee;
+    background-color: hsl($hue, 100%, 90%);
 }
 
 .menu {
@@ -26,18 +28,15 @@ header {
 
 .menuitem {
     display: inline;
-    
-}
-
-.menuitem a {
-    display: block;
-    height: 100%;
-    width: 100%;
-    padding: 1em;
-}
-
-.menuitem a.active {
-    background-color: #ddd;
+    a {
+        display: block;
+        height: 100%;
+        width: 100%;
+        padding: 1em;
+        &.active {
+            background-color: hsl($hue, 100%, 80%);
+        }
+    }
 }
 
 ars-star {
