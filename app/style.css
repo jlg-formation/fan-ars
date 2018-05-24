@@ -44,3 +44,8 @@ ars-star {
     display: block;
 }
 
+ars-password .fa {
+    position: relative;
+    right: 27px;
+}
+
