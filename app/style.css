@@ -36,3 +36,7 @@ header {
     padding: 1em;
 }
 
+.menuitem a.active {
+    background-color: #ddd;
+}
+

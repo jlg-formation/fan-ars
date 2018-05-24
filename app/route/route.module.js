@@ -1,21 +1,31 @@
-import 'angular-route';
+import '@uirouter/angularjs';
 
-const app = angular.module('route', ['ngRoute']);
+const app = angular.module('route', ['ui.router']);
 
-app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+app.config(function ($locationProvider, $stateProvider, $urlRouterProvider) {
     $locationProvider.html5Mode(true);
 
-    $routeProvider
-        .when('/', {
-            templateUrl: 'route/tmpl/home.html'
-        })
-        .when('/products', {
-            templateUrl: 'route/tmpl/products.html'
-        })
-        .when('/contact', {
-            templateUrl: 'route/tmpl/contact.html'
-        })
-        .otherwise({
-            redirectTo: '/'
-        });
-}]);
+    const homeState = {
+        name: 'home',
+        url: '/',
+        templateUrl: 'route/tmpl/home.html'
+    };
+
+    const productState = {
+        name: 'products',
+        url: '/products',
+        templateUrl: 'route/tmpl/products.html'
+    };
+
+    const contactState = {
+        name: 'contact',
+        url: '/contact',
+        templateUrl: 'route/tmpl/contact.html'
+    };
+
+    $stateProvider.state(homeState);
+    $stateProvider.state(productState);
+    $stateProvider.state(contactState);
+
+    $urlRouterProvider.otherwise('/');
+});
