@@ -32,10 +32,10 @@ app.component('arsPassword', {
     },
     template: `
     <input ng-show="$ctrl.state === $ctrl.HIDDEN" type="password">
-    <i ng-show="$ctrl.state === $ctrl.HIDDEN" class="fa fa-eye-slash"></i>
-    
+    <i ng-show="$ctrl.state === $ctrl.HIDDEN" ng-click="$ctrl.state = $ctrl.CLEAR" class="fa fa-eye-slash"></i>
+
     <input ng-show="$ctrl.state === $ctrl.CLEAR" type="text">
-    <i ng-show="$ctrl.state === $ctrl.CLEAR" class="fa fa-eye"></i>
+    <i ng-show="$ctrl.state === $ctrl.CLEAR" ng-click="$ctrl.state = $ctrl.HIDDEN" class="fa fa-eye"></i>
     
     `,
     controller: function ARSPasswordCtrl() {
