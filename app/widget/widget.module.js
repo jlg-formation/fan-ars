@@ -27,6 +27,6 @@ app.component('arsStar', {
         };
     },
     bindings: {
-        note: '@',
+        note: '<',
     },
 });
